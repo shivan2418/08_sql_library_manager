@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "database_dev",
+    "storage":"library.db",
+    "dialect": "sqlite",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "storage":"library.db",
+
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_prod",
+    "storage":"library.db",
+
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "operatorsAliases": false
+  }
+}
