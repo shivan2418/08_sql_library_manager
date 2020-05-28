@@ -17,11 +17,9 @@ function asyncHandler(cb){
 // Shows the full list of books
 router.get('/', asyncHandler(async(req, res)=> {
 
-  console.log('Reached /books')
-
-  const BookById = await Book.findAll();
-  console.log(BookById);
-  res.render('index');
+  let allBooks = await Book.findAll();
+  let books = allBooks.map(book => book.toJSON());
+  res.render('index',{'books':books,"title":'Books'});
 }));
 
 

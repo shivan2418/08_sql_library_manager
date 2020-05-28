@@ -2,4 +2,23 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  p 
+    <a class="button" href="books/new">Create New Book</a></p>
+
+  table
+    thead
+
+      //-Table Header
+      tr 
+        th Title
+        th Author
+        th Genre
+        th Year
+
+      each book in books
+        tr 
+          th #{book.title}
+          th #{book.author}
+          th #{book.genre}
+          th #{book.year}
