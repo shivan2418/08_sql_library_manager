@@ -1,28 +1,28 @@
 extends layout
 block content
-  form
+  if errors
+    each error in errors  
+          h4.error=error
+  <form action='/books/new' method='post'> 
     p
       <label for="title">Title</label>
-      <input name="title" type="text" id="title">
+      input(name="title" type="text" id="title" value=book.title)
     p
       <label for="author">Author</label>
-      <input name="author" type="text" id="author">
+      input(name="author" type="text" id="author" value=book.author)
 
     p
       <label for="genre">Genre</label>
-      <input name="genre" type="text" id="genre">
+      input(name="genre" type="text" id="genre" value=book.genre)
 
     p
       <label for="year">Year</label>
-      <input name="year" type="text" id="year">
+      input(name="year" type="text" id="year" value=book.year)
 
     p
-      <input type="submit" value="Create New Book">
+      input(type="submit" value="Create New Book")
 
     p
       <a class="button" href="/">Cancel</a>
-
-
-
 
 
