@@ -2,7 +2,7 @@ extends layout
 block content
   
   <h1>Update Book</h1>
-    form
+    form(method='post')
         p
             <label for="title">Title</label>
             input(name="title" type="text" id="title" value=book.title)
@@ -18,9 +18,9 @@ block content
         p
             input(type="submit" value="Update Book")
 
-    <form method="post" action="/books//delete" onsubmit="return confirm('Do you really want to delete this book?');">
+    <form method="post" action=/books/#{book.id}/delete onsubmit="return confirm('Do you really want to delete this book?');">
         <p>
-            <a class="button" href="all_books.html">Cancel</a>
+            <a class="button" href="/">Cancel</a>
         </p>
         <p><input type="submit" value="Delete Book"></p>
     </form>
