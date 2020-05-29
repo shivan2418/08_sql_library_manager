@@ -59,9 +59,9 @@ router.get(
   asyncHandler(async (req, res,next) => {
     let book = await Book.findByPk(req.params.id);
     if (book) {
-      res.render("update-book", { book: book });
+      res.render("update-book", { book: book ,title:book.title});
     } else {
-      res.render('page-not-found',{'title':"Book not found"});
+      res.render('page-not-found',{title:"Book not found"});
     }
   })
 );
