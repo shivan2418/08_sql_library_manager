@@ -1,7 +1,7 @@
 {
   "name": "08-sql-library-manager",
   "version": "1.0.0",
-  "author": {:"name": "Emil Elgaard","email": "shivan@shivan.dk"},
+  "author": {"name": "Emil Elgaard","email": "shivan@shivan.dk"},
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
