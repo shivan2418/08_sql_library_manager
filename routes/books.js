@@ -67,12 +67,18 @@ router.get(
 );
 
 // Updates book info in the database
-router.post(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    let book = await Book.findByPk(req.params.id);
-    await book.update(req.body);
-    res.redirect(`${book.id}`);
+router.post("/:id", asyncHandler(async (req, res) => {
+    try{
+      let book = await Book.findByPk(req.params.id);
+      await book.update(req.body);
+      res.redirect(`${book.id}`);
+    } catch(error){
+       // checking the error
+       let book = await Book.build(req.body);
+       errs = error.errors.map((err) => err.message);
+       res.render("update-book", { book: book, errors: errs, title: book.title });
+    }
+
   })
 );
 

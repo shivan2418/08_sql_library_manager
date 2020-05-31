@@ -2,6 +2,11 @@ extends layout
 block content
   
   <h1>Update Book</h1>
+
+    if errors
+        each error in errors  
+          h4.error=error
+
     form(method='post')
         p
             <label for="title">Title</label>
